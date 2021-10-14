@@ -13,8 +13,8 @@ $$ \frac{\delta u}{\delta t} = g (external force)$$
 $$ \frac{\delta u}{\delta t} = -\frac{1}{\rho} \nabla p (projection)$$</br></br>
 对于advection，使用了较易实现的semi-lagrangian与RK2。</br>
 对于projection，对原式做有限差分并化简后可以得到$$ \nabla · \nabla p = \frac{\rho}{\Delta t}\nabla · u $$
-在我们的二维网格中做离散处理，$$ (\nabla · \nabla p)_{i,j} = \frac{1}{\delta x^{2}}(-4p_{i,j} + p_{i+1,j} + p_{i-1,j} + p_{i,j-1} + p_{i,j+1}) $$
-$$ (\frac{\rho}{\Delta t}\nabla · u)_{i,j} = \frac{\rho}{\delta t \delta x}(u^{x}_{i+1,j} - u^{x}_{i,j} + u^{y}_{u,j+1} + u^{y}_{i,j}) $$
+在我们的二维网格中做离散处理，$$ (\nabla · \nabla p)\_{i,j} = \frac{1}{\delta x^{2}}(-4p\_{i,j} + p\_{i+1,j} + p\_{i-1,j} + p\_{i,j-1} + p\_{i,j+1}) $$
+$$ (\frac{\rho}{\Delta t}\nabla · u)\_{i,j} = \frac{\rho}{\Delta t \Delta x}(u^{x}\_{i+1,j} - u^{x}\_{i,j} + u^{y}\_{u,j+1} - u^{y}\_{i,j}) $$</br>
 得到一个线性系统，通过advection中求出的u来解p。这里采用了易实现的jacobi迭代解线性系统，迭代次数设置为400。</br>
 并加入了一些视觉上的增强效果</br></br>
 
