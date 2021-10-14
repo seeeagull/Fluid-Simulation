@@ -30,5 +30,6 @@ cmake框架借鉴了GAME101的P8。</br>
 	$ ./ropesim
 # 效果 #
 以下动图展示了运行效果：</br></br>
+![avatar](https://github.com/seeeagull/Fluid-Simulation/blob/master/demo/ns.gif)</br>
 # 参考资料 #
 https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_equations
