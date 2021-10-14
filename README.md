@@ -2,7 +2,8 @@
 # 题目 #
 基于闫令琪老师GAMES101课程的拓展。</br>编写二维流体动力学模拟程序，以估算Navier-Stokes方程下不可压缩的均匀流体的行为。
 # 实现 #
-参考了胡渊明老师GAMES201课程欧拉视角部分的讲解。</br></br>
+参考了胡渊明老师GAMES201课程欧拉视角部分的讲解。</br>
+cmake框架借鉴了GAMES101的P8。</br></br>
 采用欧拉视角。</br>
 原始NS方程为 $$ \rho \frac{Du}{Dt} = -\nabla p + \nabla · \tau + \rho g $$ </br>
 不考虑粘性项，有$$ \frac{Du}{Dt} = -\frac{1}{\rho} \nabla p + g $$ </br>
@@ -18,7 +19,6 @@ $$ (\frac{\rho}{\Delta t}\nabla · u)\_{i,j} = \frac{\rho}{\Delta t \Delta x}(u^
 得到一个线性系统，通过advection中求出的u来解p。这里采用了易实现的jacobi迭代解线性系统，迭代次数设置为400。</br>
 并加入了一些视觉上的增强效果</br></br>
 
-cmake框架借鉴了GAME101的P8。</br>
 光栅化部分尚未完善。
 # 依赖 #
 需预先安装OpenGL, Freetype和RandR。
